@@ -6,6 +6,10 @@ r = redis.Redis(host='redis', port=6379, password=os.environ["REDIS_PASSWORD"],d
 
 api = Flask(__name__)
 
+@api.route('/', methods=['GET'])
+def index():  
+  return json.dumps({"status": True, "value": "It's Work !"})
+
 @api.route('/<key>', methods=['GET'])
 def get(key):  
   return json.dumps({"status": True, "value": r.get(key)})
