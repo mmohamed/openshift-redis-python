@@ -2,7 +2,7 @@ import redis
 import os
 from flask import Flask, json, request
 
-r = redis.Redis(host='redis', port=6379, password=os.environ["REDIS_PASSWORD"])
+r = redis.Redis(host='redis', port=6379, password=os.environ["REDIS_PASSWORD"],decode_responses=True)
 
 api = Flask(__name__)
 
