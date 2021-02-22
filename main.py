@@ -1,6 +1,6 @@
 import redis
 import os
-from flask import Flask, request
+from flask import Flask, json, request
 
 r = redis.Redis(host='redis', port=6379, password=os.environ["REDIS_PASSWORD"])
 
