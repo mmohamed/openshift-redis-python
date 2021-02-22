@@ -12,7 +12,7 @@ def get(key):
   
 @api.route('/<key>', methods=['POST'])
 def set(key):  
-  return json.dumps({"status": r.set(request.data), "value": key})
+  return json.dumps({"status": r.set(key, request.data), "value": key})
     
 if __name__ == '__main__':
   api.run(host='0.0.0.0', port=8080)
